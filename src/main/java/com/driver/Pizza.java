@@ -14,14 +14,14 @@ public class Pizza {
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         // your code goes here
-        if(isVeg){
+        if(this.isVeg == true){
             this.price = 300;
             this.toppingPrice = 70;
         }else{
             this.price = 400;
             this.toppingPrice = 120;
         }
-        this.bill = "Base Price Of The Pizza: "+this.price+"\n";
+        this.bill = "Base Price Of The Pizza: " + this.price + "\n";
     }
 
     public int getPrice(){
@@ -59,15 +59,15 @@ public class Pizza {
                 this.bill += "Extra Cheese Added: 80"+"\n";
             }
             if(toppigsAdded){
-                this.bill += "Extra Toppings Added: "+toppingPrice+"\n";
+                this.bill += "Extra Toppings Added: "+this.toppingPrice+"\n";
             }
             if(paperBag){
-                this.bill += "Paperbag Added: 20"+"\n";
+                this.bill += "Paperbag Added: 20" + "\n";
             }
             this.bill += "Total Price: "+this.price;
             billGenerated = true;
             return this.bill;
         }
-        return "";
+        return this.bill;
     }
 }
