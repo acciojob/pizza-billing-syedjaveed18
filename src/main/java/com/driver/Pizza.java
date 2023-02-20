@@ -16,8 +16,10 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             this.price = 300;
+            this.toppingPrice = 70;
         }else{
             this.price = 400;
+            this.toppingPrice = 120;
         }
         this.bill = "Base Price Of The Pizza: "+this.price+"\n";
     }
@@ -37,13 +39,7 @@ public class Pizza {
     public void addExtraToppings(){
         // your code goes here
         if(!toppigsAdded){
-            if(this.isVeg){
-                this.price += 70;
-                toppingPrice = 70;
-            }else{
-                this.price += 120;
-                toppingPrice = 120;
-            }
+            this.price += toppingPrice;
             toppigsAdded = true;
         }
     }
@@ -60,13 +56,13 @@ public class Pizza {
         // your code goes here
         if(!billGenerated){
             if(cheeseAdded){
-                this.bill += "Extra Cheese Added: "+80+"\n";
+                this.bill += "Extra Cheese Added: 80"+"\n";
             }
             if(toppigsAdded){
                 this.bill += "Extra Toppings Added: "+toppingPrice+"\n";
             }
             if(paperBag){
-                this.bill += "Paperbag Added: "+20+"\n";
+                this.bill += "Paperbag Added: 20"+"\n";
             }
             this.bill += "Total Price: "+this.price;
             billGenerated = true;
